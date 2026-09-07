@@ -10,6 +10,6 @@ server.on("upgrade", (req, socket, head) => {
   wisp.routeRequest(req, socket, head);
 });
 
-server.listen(8080, () => {
+server.listen(process.env.PORT || 8080, () => {
   console.log("Wisp server running");
 });
