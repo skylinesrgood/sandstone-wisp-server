@@ -1,14 +1,12 @@
-import http from "node:http";
-import { server as wisp } from "@mercuryworkshop/wisp-js/server";
+import http from "http";
+import { createWispServer } from "@mercuryworkshop/wisp-server-node";
 
 const server = http.createServer((req, res) => {
   res.writeHead(200);
   res.end("Sandstone Wisp Server Online");
 });
 
-server.on("upgrade", (req, socket, head) => {
-  wisp.routeRequest(req, socket, head);
-});
+createWispServer(server);
 
 server.listen(process.env.PORT || 8080, () => {
   console.log("Wisp server running");
