@@ -6,6 +6,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "@mercuryworkshop/wisp-server-node": "latest"
-  }
+  "@mercuryworkshop/wisp-server-node": "latest",
+  "ws": "latest"
 }
